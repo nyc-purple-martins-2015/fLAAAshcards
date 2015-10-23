@@ -5,14 +5,17 @@ end
 
 get '/decks/:name' do
   @deck.cards.all.each |card|
-    if card.correct
+  if card.correct
   @deck = Deck.find_by name: params[:name]
-  if @deck.cards.all.empty?
+    if @deck.cards.all.empty?
     # redirect to('/endgame')
-  else
-  @next_card = @deck.next_card(@temp_array)
+    else
+    @next_card = @deck.next_card(@temp_array)
   erb :'/decks/show'
+    end
+  end
 end
+
 
 put '/decks/:name' do
   if correct
@@ -20,4 +23,5 @@ put '/decks/:name' do
   redirect to("/decks/#{@deck.cards}")
   elsif incorrect
     redirect to("/decks/#{@deck.cards}")
+  end
 end

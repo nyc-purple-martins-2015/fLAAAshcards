@@ -4,4 +4,7 @@ class Round < ActiveRecord::Base
   has_many :cards, :through => :deck
   has_many :guesses
 
+
+
+
 end

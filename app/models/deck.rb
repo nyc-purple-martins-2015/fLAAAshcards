@@ -6,6 +6,10 @@ class Deck < ActiveRecord::Base
 
   validates :name, presence: true, uniqueness: true
 
+  def get_deck
+
+  end
+
   def next_card
     @temp_array = self.cards.all
     @temp_array.sample
