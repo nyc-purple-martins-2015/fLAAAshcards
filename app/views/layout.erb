@@ -6,6 +6,7 @@
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px|Indie+Flower|Inconsolata|Josefin+Sans:400,600|Pathway+Gothic+One|Courgette|Julius+Sans+One|Fredericka+the+Great|Kalam|Racing+Sans+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/normalize.css">
   <!--
     application.css is where you put your styles
@@ -19,14 +20,16 @@
 </head>
 <body>
   <div id="content">
+    <div class="text-align-right">
     <% if logged_in? %>
-        <a href="/users/<%= current_user.id %>"><%= current_user.username %></a>
-        <a href="/logout">Logout</a>
+        <a class="pipe-separate" href="/users/<%= current_user.id %>"><%= current_user.username.downcase.capitalize %></a>
+        <a class="pipe-separate" href="/logout">Logout</a>
     <% else %>
-        <a href="/register">Register</a>
-        <a href="/login">Login</a>
+        <a class="pipe-separate" href="/register">Register</a>
+        <a class="pipe-separate" href="/login">Login</a>
     <% end %>
-        <a href="/">Home</a>
+        <a class="pipe-separate" href="/">Home</a>
+    </div>
     <%= yield %>
   </div>
 </body>
