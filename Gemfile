@@ -12,8 +12,10 @@ gem 'activerecord'
 gem 'bcrypt-ruby'
 
 gem 'rake'
-
+gem 'pry'
 gem 'shotgun'
+gem 'bcrypt'
+gem 'sinatra-flash'
 
 group :test do
   gem 'database_cleaner', '~> 1.4.1'
