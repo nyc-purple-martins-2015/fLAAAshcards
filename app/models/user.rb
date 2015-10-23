@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   has_many :guesses, :through => :rounds
   has_many :decks, :through => :rounds
 
+
+  validates :username, presence: true
+
   include BCrypt
 
   def password
