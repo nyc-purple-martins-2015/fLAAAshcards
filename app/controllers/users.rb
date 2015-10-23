@@ -27,5 +27,7 @@ get '/logout' do
 end
 
 
-get '/users/:id' do
+get '/users/:id' do |id|
+  @user = User.find(id)
+  "Hello there #{@user.username}, you registered"
 end
