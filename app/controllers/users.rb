@@ -1,11 +1,11 @@
 get '/register' do
-
   erb :'/users/register'
 end
 
 post '/register' do
   @user = User.new(params[:user])
   if @user.save
+    session[:user_id] = @user.id
     redirect to("/users/#{@user.id}")
   else
     @errors= @user.errors.full_messages
@@ -14,13 +14,18 @@ post '/register' do
 end
 
 get '/login' do
+  erb :'/users/login'
 end
 
 post '/login' do
-  redirect to ('/')
+  @user = User.find_by(username: params[:user][:username])
+  session[:user_id] = @user.id
+  redirect to("/users/#{@user.id}")
 end
 
 get '/logout' do
+  session.clear
+  redirect to('/')
 end
 
 
