@@ -1,6 +1,3 @@
-get '/' do
-  erb :'users/register'
-end
 get '/register' do
 
   erb :'/users/register'
