@@ -1,7 +1,3 @@
-get '/' do
-  "Home"
-end
-
 get '/register' do
   erb :'/users/register'
 end
