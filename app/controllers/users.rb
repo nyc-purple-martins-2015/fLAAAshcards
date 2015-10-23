@@ -31,5 +31,5 @@ end
 
 get '/users/:id' do |id|
   @user = User.find(id)
-  "Hello there #{@user.username}, you registered"
+  erb :'/users/show'
 end

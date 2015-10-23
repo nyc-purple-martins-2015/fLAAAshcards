@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 body {font-family: Vollkorn; font-size: 160%; line-height: 160%; }
-h1, h2, h3, h4, h5, h6 {font-family: Georgia; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-style: italic; font-weight: 400;}
+h1, h2, h3, h4, h5, h6 {font-family: 'Inconsolata'; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: white; font-weight: 400;   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;}
 h1 {font-size: 1.8em;}
 h2 {font-size: 1.6em;}
 h3 {font-size: 1.4em;}
@@ -30,34 +30,85 @@ footer { font-size: 0.7em; margin-top: 2em;}
 
 #content { margin: 0 auto; padding: 0 1em; max-width: 37em; position: relative; width: 61.8%;}
 
+html {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Constellation_Fornax,_EXtreme_Deep_Field_(cropped).jpg');
+    background-size: cover;
+ }
+
+ label {
+  color: white;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+ }
+
+ #Hero {
+    margin: auto;
+    min-height: 100%;
+    min-width: 1em;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    left: 0em;
+    top: 0em;
+}
 
 .container {
   margin: 20px auto;
-  width: 600px;
+  width: 75%;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
+}
+
+.display-block {
+  display: block;
+}
+
+.bottom-margin-1em {
+  margin-bottom: 1em;
+}
+.input {
+  width: 75%;
 }
 th {
   text-align: left;
 }
 
 a {
-    color: #36AECC;
+    color: white;
     text-decoration: none;
+    font-family: 'Racing Sans One';
 }
 
 a:visited {
-    color: #AAA;
+    color: #94E9FF;
 }
 
 a:hover {
-    color: #000;
+    color: red;
     text-decoration: underline;
 }
 
 .logo {
   height: 2em;
 }
+
+.text-align-right {
+  text-align: right;
+}
+
+.pipe-separate {
+  padding-left: 1em;
+  padding-right: 1em;
+  border-right: 1px solid;
+}
+
+  .pipe-separate:first-of-type {
+    padding-left: 0;
+  }
+
+  .pipe-separate:last-of-type {
+    padding-right: 0;
+    border-right: none;
+  }
 
 code {
     font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
