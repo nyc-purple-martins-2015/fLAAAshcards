@@ -1,0 +1,9 @@
+<h2>Flashcard Decks</h2>
+
+<% @decks.each do |deck| %>
+<ul>
+  <li>
+    <a href="/decks/<%=deck.name%>"><%= deck.name %></a>
+  </li>
+  <%end%>
+</ul>
