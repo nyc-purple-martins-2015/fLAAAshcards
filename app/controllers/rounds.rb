@@ -27,7 +27,7 @@ put '/rounds/:id' do |id|
   @card = Card.find(params[:card][:id].to_i)
   @guess = Guess.create(round_id: id, card_id: @card.id)
 
-  if @user_answer == @card.answer
+  if @user_answer.downcase == @card.answer.downcase
     @correct = "You got the last question right!"
     @guess.update_attributes(correct: 1)
     @current_card = @round.next_card
@@ -37,7 +37,7 @@ put '/rounds/:id' do |id|
       erb :'rounds/complete'
     end
   else
-    @incorrect = "That was wrong, here is the right answer: #{@card.answer}"
+    @incorrect = "That was wrong, here is the right answer: #{@card.answer.split(" ").map {|word| word.downcase.capitalize}.join(" ")}"
     @current_card = @round.next_card
     erb :'rounds/show'
   end
