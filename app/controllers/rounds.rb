@@ -1,7 +1,13 @@
 
 get '/rounds/new/:deck_id' do
-  @round = Round.create(user_id: session[:user_id], deck_id: params[:deck_id])
-  erb :'rounds/new'
+  if logged_in?
+    @round = Round.create(user_id: session[:user_id], deck_id: params[:deck_id])
+    erb :'rounds/new'
+  else
+    @error = "Please login or register to play."
+    @decks = Deck.all
+    erb :index
+  end
 end
 
 post '/rounds/:id' do |id|
