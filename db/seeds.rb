@@ -14,7 +14,7 @@
     end
   end
 
-deck = Deck.create!(name: "Books")
+
 
 sample = Deck.create!(name: "Sample", description: "test deck")
 
@@ -35,11 +35,3 @@ trivia_cards = create_cards("db/seeds2.txt", trivia)
 # end
 
 
-anders = User.create!(username: "anders", password: "password")
-
-
-5.times do
-  deck.cards.create!(question: Faker::Book.title, answer: Faker::Name.name)
-end
-
-anders.rounds.create!(deck_id: 1)
