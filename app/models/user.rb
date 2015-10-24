@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :guesses, :through => :rounds
   has_many :decks, :through => :rounds
   has_many :cards, :through => :decks
+  has_many :custom_decks, :foreign_key => :author_id, :source => :deck
 
 
   validates :username, presence: true, uniqueness: true

@@ -1,4 +1,10 @@
-<h1> Hello <%=@user.username%>! Here are your stats:</h1>
+<h1> Hello <%=@user.username%>!</h1>
+<h2> Here are your decks:</h2>
+  @user.custom_decks.each do |deck|
+
+  deck.title
+
+<h2>Here are your stats:</h2>
 <% @user.rounds.reverse.each do |round|%>
 <div class="container">
   <h2>You played the <%=round.deck.name%> deck on <%=round.created_at.strftime("%B %d, %Y")%>.</h2>
