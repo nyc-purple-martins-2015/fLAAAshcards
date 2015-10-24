@@ -12,7 +12,11 @@ end
 get '/rounds/:id' do |id|
   @round = Round.find(id)
   @current_card = @round.next_card
-  erb :'rounds/show'
+  if @current_card
+    erb :'rounds/show'
+  else
+    erb :'rounds/complete'
+  end
 end
 
 put '/rounds/:id' do |id|
