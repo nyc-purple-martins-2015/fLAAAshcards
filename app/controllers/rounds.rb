@@ -21,7 +21,19 @@ end
 
 put '/rounds/:id' do |id|
   @round = Round.find(id)
-  redirect to("/rounds/#{@round.id}")
+  @user_answer = params[:user][:answer]
+  @card = Card.find(params[:card][:id].to_i)
+
+  if @user_answer == @card.answer
+    @correct = "You got the last question right!"
+    @current_card = @round.next_card
+    erb :'rounds/show'
+  else
+    @incorrect = "That was wrong, here is the right answer: #{@card.answer}"
+    @current_card = @round.next_card
+    erb :'rounds/show'
+  end
+
 end
 
 

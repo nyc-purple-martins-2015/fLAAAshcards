@@ -1,10 +1,20 @@
 <div class='container'>
 
+<% if @correct%>
+  <h4 class="white-text"><%= @correct %></h4>
+<% end %>
+
+<% if @incorrect%>
+  <h4 class="white-text"><%= @incorrect %></h4>
+<% end %>
+
 <h2> You are playing <%=@round.deck.name%></h2>
 <h3>Who is the author of "<%= @current_card.question %>"?<h3>
 <form method="post" action="/rounds/<%= @round.id %>">
   <input type="hidden" name="_method" value="put">
-  <input type="text" name="answer" placeholder="Type answer here">
+  <input type="hidden" name="card[answer]" value= "<%= @current_card.answer %>">
+  <input type="hidden" name="card[id]" value= "<%= @current_card.id %>">
+  <input class="black-text" type="text" name="user[answer]" placeholder="Type answer here">
   <input type="submit" value="Submit"/>
 </form>
 </div>
