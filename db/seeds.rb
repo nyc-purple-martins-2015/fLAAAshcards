@@ -17,7 +17,7 @@
 create_cards
 
 
-sample = Deck.create!(name: "sample", description: "test deck")
+sample = Deck.create!(name: "Sample", description: "test deck")
 
 Card.all.each do |card|
   sample.cards << card
