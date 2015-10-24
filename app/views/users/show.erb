@@ -1,8 +1,9 @@
+<h1> Hello <%=@user.username%>! Here are your stats:</h1>
+<% @user.rounds.each do |round| %>
 <div class="container">
-  <h1><%= @user.username %>'s Profile Page</h1>
-  <h4>You have played x games.</h4>
-  <h4>You guess correctly x % of the time.</h4>
-  <h4>Your favorite deck to play is x</h4>
-  <h4>You have created x number of decks.</h4>
-
+  <h2>You played <%=round.deck.name%> on <%=round.created_at%>.</h2>
+  <h3>You made <%=round.guesses.count%> total guesses.</h3>
+  <h3>You guessed <%=round.guessed_correct_on_first_try%> cards correctly on the first try out of <%=round.cards.count%> cards.</h3>
 </div>
+<% end %>
+
