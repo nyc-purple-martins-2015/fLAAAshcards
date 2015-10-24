@@ -35,6 +35,14 @@ html {
     background-size: cover;
  }
 
+ .black-text {
+  color: black;
+ }
+
+  .white-text {
+  color: white;
+ }
+
  label {
   color: white;
   text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
