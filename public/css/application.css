@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 body {font-family: Vollkorn; font-size: 160%; line-height: 160%; }
-h1, h2, h3, h4, h5, h6 {font-family: 'Slabo 27px'; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: white; font-weight: 400; text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;}
+h1, h2, h3, h4, h5, h6 {font-family: 'Slabo 27px'; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: white; font-weight: 400;  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;}
 h1 {font-size: 1.8em;}
 h2 {font-size: 1.6em;}
 h3 {font-size: 1.4em;}
@@ -28,7 +28,7 @@ del {text-decoration: line-through; color: #777777;}
 
 footer { font-size: 0.7em; margin-top: 2em;}
 
-#content { margin: 0 auto; padding: 0 1em; max-width: 37em; position: relative; width: 61.8%;}
+#content { margin: 0 auto; padding: 0 1em; max-width: 60em; position: relative; width: 61.8%;}
 
 html {
     background-image: url('http://www.avandentertainment.com/wp-content/themes/theme/img/assets/bg/halftone.png');
