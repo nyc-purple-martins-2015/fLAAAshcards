@@ -1,11 +1,6 @@
 <div class="container">
   <% if @errors %>
-    <%@errors.each do |error| %>
-      <h4>You were unable to login because:</h4>
-      <ul>
-        <li><%= error %> </li>
-      </ul>
-    <% end %>
+      <h4><%= @errors %></h4>
   <% end %>
 
   <h1>Please login:</h1>
