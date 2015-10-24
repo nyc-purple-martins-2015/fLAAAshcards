@@ -8,7 +8,7 @@ end
 
 post '/rounds/new' do
   @round = Round.create(session, deck)
-  redirect to("/rounds/#{@round.id}/deck_name")
+  redirect to("/rounds/#{@round.id}/#{@round.deck.name}")
 end
 
 put '/decks/:name' do
