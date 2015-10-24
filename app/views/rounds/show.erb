@@ -1,0 +1,10 @@
+<div class='container'>
+
+<h2> You are playing <%=@round.deck.name%></h2>
+<h3>Who is the author of "<%= @current_card.question %>"?<h3>
+<form method="post" action="/rounds/<%= @round.id %>">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="answer" placeholder="Type answer here">
+  <input type="submit" value="Submit"/>
+</form>
+</div>

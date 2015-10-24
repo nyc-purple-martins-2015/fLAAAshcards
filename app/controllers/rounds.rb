@@ -1,21 +1,23 @@
-get '/rounds/:id/:deck_name' do
-  @deck = Deck.find_by(name: params[:deck_name])
-  if @go = true
-  round = Round.find(id: params[:id])
-  correct_guesses = round.guesses.where(correct: 1)
-  correct_cards = correct_guesses.map { |guess| guess.card }
-  current_deck = round.cards - correct_cards
-end
+
+get '/rounds/new/:deck_id' do
+  @round = Round.create(user_id: session[:user_id], deck_id: params[:deck_id])
+  erb :'rounds/new'
 end
 
-get 'rounds/new' do
+post '/rounds/:id' do |id|
+  @round = Round.find(id)
+  redirect to("/rounds/#{@round.id}")
 end
 
-post '/rounds/new' do
-  Round.create(session, deck)
-  redirect to('/rounds/id/deck_name')
+get '/rounds/:id' do |id|
+  @round = Round.find(id)
+  @current_card = @round.next_card
+  erb :'rounds/show'
 end
 
-put '/decks/:name' do
-
+put '/rounds/:id' do |id|
+  @round = Round.find(id)
+  redirect to("/rounds/#{@round.id}")
 end
+
+
