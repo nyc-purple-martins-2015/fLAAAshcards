@@ -25,6 +25,6 @@ class Round < ActiveRecord::Base
   end
 
   def guessed_correct_on_first_try
-    guess_card_count.select {|card_id, occurences| card_id if occurences == 1 }.keys.length
+    guess_card_count.select {|card_id, occurences| card_id if occurences == 1 }.keys.count
   end
 end

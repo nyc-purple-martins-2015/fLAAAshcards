@@ -1,9 +1,14 @@
+<% if @error %>
+  <h3 class="red-text"><%= @error %></h3>
+<% end %>
+
 <h2>Flashcard Decks</h2>
 
-<% @decks.each do |deck| %>
+
 <ul>
+<% @decks.each do |deck| %>
   <li>
     <a href="/rounds/new/<%=deck.id%>"><%= deck.name %></a>
   </li>
-  <%end%>
+<%end%>
 </ul>

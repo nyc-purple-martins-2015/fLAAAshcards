@@ -1,7 +1,7 @@
 <h1> Hello <%=@user.username%>! Here are your stats:</h1>
-<% @user.rounds.each do |round| %>
+<% @user.rounds.reverse.each do |round|%>
 <div class="container">
-  <h2>You played <%=round.deck.name%> on <%=round.created_at%>.</h2>
+  <h2>You played the <%=round.deck.name%> deck on <%=round.created_at.strftime("%B %d, %Y")%>.</h2>
   <h3>You made <%=round.guesses.count%> total guesses.</h3>
   <h3>You guessed <%=round.guessed_correct_on_first_try%> cards correctly on the first try out of <%=round.cards.count%> cards.</h3>
 </div>
