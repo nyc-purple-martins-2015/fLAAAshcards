@@ -1,8 +1,13 @@
 <h1> Hello <%=@user.username%>!</h1>
 <h2> Here are your decks:</h2>
-  @user.custom_decks.each do |deck|
-
-  deck.title
+<ul>
+<% @user.decks.each do |deck| %>
+  <li>
+    <a href="/rounds/new/<%=deck.id%>"><%= deck.name %></a>
+  </li>
+<%end%>
+</ul>
+<a href="/users/<%=@user.id%>/new_deck">Create a new deck</a>
 
 <h2>Here are your stats:</h2>
 <% @user.rounds.reverse.each do |round|%>

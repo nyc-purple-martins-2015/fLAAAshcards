@@ -4,11 +4,21 @@
 
 <h2>Flashcard Decks</h2>
 
-
-<ul>
-<% @decks.each do |deck| %>
-  <li>
-    <a href="/rounds/new/<%=deck.id%>"><%= deck.name %></a>
-  </li>
-<%end%>
-</ul>
+<% if session[:user_id] %>
+  <h3>Your Decks:</h3>
+  <ul>
+    <% @decks.where(author_id: session[:user_id]).each do |deck| %>
+      <li>
+        <a href="/rounds/new/<%=deck.id%>"><%= deck.name %></a>
+      </li>
+    <%end%>
+  </ul>
+<% end %>
+  <h3>Public Decks</h3>
+    <ul>
+    <% @decks.where(author_id: nil).each do |deck| %>
+      <li>
+        <a href="/rounds/new/<%=deck.id%>"><%= deck.name %></a>
+      </li>
+    <%end%>
+  </ul>
