@@ -1,7 +1,7 @@
 <h1> Hello <%=@user.username%>!</h1>
-<h2> Here are your decks:</h2>
+<h2> Here the decks you have played:</h2>
 <ul>
-<% @user.decks.each do |deck| %>
+<% @user.played_decks.each do |deck| %>
   <li>
     <a href="/rounds/new/<%=deck.id%>"><%= deck.name %></a>
   </li>
