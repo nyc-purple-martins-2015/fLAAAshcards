@@ -16,9 +16,9 @@
 
 
 
-sample = Deck.create!(name: "Sample", description: "test deck")
+sample = Deck.create!(name: "Test", description: "Test Deck", image: "https://lh4.ggpht.com/wKrDLLmmxjfRG2-E-k5L5BUuHWpCOe4lWRF7oVs1Gzdn5e5yvr8fj-ORTlBF43U47yI=w300")
 
-trivia = Deck.create!(name: "Trivia", description: "Random Trivia")
+trivia = Deck.create!(name: "Trivia", description: "Random Trivia", image: "http://www.betweenthebuns.com/images/trivia.gif")
 
 sample_cards = create_cards("db/seed.txt", sample)
 

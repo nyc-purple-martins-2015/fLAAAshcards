@@ -1,14 +1,31 @@
-<% if @error %>
-  <h3 class="red-text"><%= @error %></h3>
-<% end %>
-
-<h2>Flashcard Decks</h2>
+<div class="jumbotron">
+  <div class="container">
 
 
-<ul>
-<% @decks.each do |deck| %>
-  <li>
-    <a href="/rounds/new/<%=deck.id%>"><%= deck.name %></a>
-  </li>
-<%end%>
-</ul>
+    <div align="center">
+      <% if @error %>
+        <h3 class="red-text"><%= @error %></h3>
+        <% end %>
+
+      <h2 class="bottom-margin-3em">Flashcard Decks</h2>
+    </div>
+
+
+
+  <div class="row">
+        <% @decks.each do |deck| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="<%= deck.image %>" alt="...">
+      <div class="caption">
+        <h3><%= deck.name%></h3>
+        <p><%= deck.description %></p>
+        <p><a href="/rounds/new/<%=deck.id%>" class="btn btn-primary" role="button">Play</a> </p>
+      </div>
+    </div>
+  </div>
+        <%end%>
+</div>
+
+</div>
+</div>

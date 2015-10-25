@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
   <link href='https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px|Indie+Flower|Inconsolata|Josefin+Sans:400,600|Pathway+Gothic+One|Courgette|Julius+Sans+One|Fredericka+the+Great|Kalam|Racing+Sans+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/normalize.css">
   <!--
@@ -19,17 +31,21 @@
   <title></title>
 </head>
 <body>
-  <div id="content">
-    <div class="text-align-right">
-    <% if logged_in? %>
-        <a class="pipe-separate" href="/users/<%= current_user.id %>"><%= current_user.username.downcase.capitalize %></a>
-        <a class="pipe-separate" href="/logout">Logout</a>
-    <% else %>
-        <a class="pipe-separate" href="/register">Register</a>
-        <a class="pipe-separate" href="/login">Login</a>
-    <% end %>
-        <a class="pipe-separate" href="/">Home</a>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header navbar-right">
+      <% if logged_in? %>
+      <a class="btn btn-default navbar-btn" href="/users/<%= current_user.id %>"><%= current_user.username.downcase.capitalize %></a>
+      <a class="btn btn-default navbar-btn" href="/logout">Logout</a>
+      <% else %>
+      <a class="btn btn-default navbar-btn" href="/register">Register</a>
+      <a class="btn btn-default navbar-btn" href="/login">Login</a>
+      <% end %>
+      <a class="btn btn-default navbar-btn" href="/">Home</a>
     </div>
+  </div>
+</nav>
     <%= yield %>
   </div>
 </body>
