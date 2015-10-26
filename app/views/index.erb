@@ -2,13 +2,25 @@
   <h3 class="red-text"><%= @error %></h3>
 <% end %>
 
-<h2>Flashcard Decks</h2>
+<h2>Welcome to Flashcard Decks</h2>
 
-
-<ul>
-<% @decks.each do |deck| %>
-  <li>
-    <a href="/rounds/new/<%=deck.id%>"><%= deck.name %></a>
-  </li>
-<%end%>
-</ul>
+<% if logged_in? %>
+  <h3>Your Private Decks:</h3>
+  <ul>
+    <% User.find(session[:user_id]).decks.where(private: 1).each do |deck| %>
+      <li>
+        <a href="/rounds/new/<%=deck.id%>"><%= deck.name %></a>
+      </li>
+    <% end %>
+  </ul>
+  <h3>Decks Available for all Registered Users:</h3>
+    <ul>
+    <% @decks.where(private: 0).each do |deck| %>
+      <li>
+        <a href="/rounds/new/<%=deck.id%>"><%= deck.name %></a>
+      </li>
+    <%end%>
+  </ul>
+<% else %>
+  <h3>Please Register or Log in to Play</h3>
+<% end %>

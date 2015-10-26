@@ -1,0 +1,11 @@
+<div class="container">
+  <h3>Welcome to our Custom Deck Creater! To get started, choose the name of your new deck:</h3>
+  <form method="post" action="/users/<%=@user.id%>/new_deck">
+    <input type="text" name="deck[name]" placeholder="Deck Name"/>
+    <input type="hidden" name="deck[author_id]" value="<%=@user.id%>"/>
+    <br>
+    <input type="checkbox" name="deck[private]" value="1"/>
+    <label>Check here if you would like to make this a private deck. Otherise this deck will be playable by all registred users.</label>
+    <input type="submit" value="Start adding Questions!"/>
+  </form>
+</div>

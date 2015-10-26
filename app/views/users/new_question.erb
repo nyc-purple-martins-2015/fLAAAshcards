@@ -1,0 +1,8 @@
+<h1>Now add a question and answer to <%=@deck.name%>:</h1>
+
+<form method="post" action="/users/<%=@user.id%>/decks/<%=@deck.id%>/next_card">
+  <input type="text" name="card[question]" placeholder="Question">
+  <input type="text" name="card[answer]" placeholder="Answer">
+  <input type="hidden" name="card[deck_id" value="<%=@deck.id%>"/>
+  <input type="submit" value="Create Card"/>
+</form>
